@@ -28,10 +28,10 @@ spec:
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
       imagePullSecrets:
-      - name: deploy-pull-harbor
+      - name: regred
       containers:
       - name: server
-        image: emailservice:v1
+        image: gdileep/home-commerce-project-emailservice:v1
         ports:
         - containerPort: 8080
         env:
@@ -51,8 +51,8 @@ spec:
             command: ["/bin/grpc_health_probe", "-addr=:8080"]
         resources:
           requests:
-            cpu: 100m
-            memory: 64Mi
+            cpu: 45m
+            memory: 30Mi
           limits:
             cpu: 200m
             memory: 128Mi

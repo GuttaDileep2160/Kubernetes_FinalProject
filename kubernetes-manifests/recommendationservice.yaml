@@ -28,10 +28,10 @@ spec:
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
       imagePullSecrets:
-      - name: deploy-pull-harbor
+      - name: regcred
       containers:
       - name: server
-        image: recommendationservice:v1 
+        image: gdileep/home-commerce-project-recommendationservice:v1
         ports:
         - containerPort: 8080
         readinessProbe:
@@ -55,8 +55,8 @@ spec:
         #   value: "1"
         resources:
           requests:
-            cpu: 100m
-            memory: 220Mi
+            cpu: 10m
+            memory: 45Mi
           limits:
             cpu: 200m
             memory: 450Mi

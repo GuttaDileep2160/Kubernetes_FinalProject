@@ -27,10 +27,10 @@ spec:
     spec:
       serviceAccountName: default
       imagePullSecrets:
-      - name: deploy-pull-harbor
+      - name: regcred
       containers:
         - name: server
-          image: checkoutservice:v1
+          image: gdileep/home-commerce-project-checkoutservice:v1
           ports:
           - containerPort: 5050
           readinessProbe:

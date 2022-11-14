@@ -27,10 +27,10 @@ spec:
     spec:
       serviceAccountName: default
       imagePullSecrets:
-      - name: deploy-pull-harbor
+      - name: regcred
       containers:
       - name: server
-        image: shippingservice:v1
+        image: gdileep/home-commerce-project-shippingservice:v1
         ports:
         - containerPort: 50051
         env:
@@ -53,8 +53,8 @@ spec:
             command: ["/bin/grpc_health_probe", "-addr=:50051"]
         resources:
           requests:
-            cpu: 100m
-            memory: 64Mi
+            cpu: 10m
+            memory: 14Mi
           limits:
             cpu: 200m
             memory: 128Mi

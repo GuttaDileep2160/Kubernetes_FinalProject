@@ -28,10 +28,10 @@ spec:
       serviceAccountName: default
       terminationGracePeriodSeconds: 20
       imagePullSecrets:
-      - name: deploy-pull-harbor
+      - name: regcred
       containers:
       - name: server
-        image: adservice:v1
+        image: gdileep/home-commerce-project-adservice:v1
         ports:
         - containerPort: 9555
         env:

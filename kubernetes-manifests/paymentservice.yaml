@@ -28,10 +28,10 @@ spec:
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
       imagePullSecrets:
-      - name: deploy-pull-harbor
+      - name: regcred
       containers:
       - name: server
-        image: paymentservice:v1
+        image: gdileep/home-commerce-project-paymentservice:v1
         ports:
         - containerPort: 50051
         env:
